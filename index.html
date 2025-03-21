@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aryan's Page</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: linear-gradient(to right, #ff9966, #ff5e62);
+        }
+        
+        h1 {
+            font-size: 28px;
+            font-weight: bold;
+        }
+        
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        ul li {
+            display: inline;
+            margin: 10px;
+        }
+        
+        a {
+            text-decoration: none;
+            color: blue;
+            font-weight: bold;
+        }
+        
+        .section {
+            display: none;
+            margin-top: 20px;
+        }
+        
+        .active {
+            display: block;
+        }
+
+        /* Profile details styling */
+        .profile-details {
+            text-align: left;
+            margin-top: 20px; 
+            padding-left: 20px;
+        }
+
+        .profile-details li {
+            font-size: 18px;
+            margin-bottom: 10px;
+            line-height: 1.8;
+        }
+
+        img {
+            width: 200px;
+            margin: 10px;
+            border-radius: 10px;
+        }
+    </style>
+
+    <script>
+        function showSection(sectionId) {
+            document.querySelectorAll('.section').forEach(section => {
+                section.classList.remove('active');
+            });
+
+            document.getElementById(sectionId).classList.add('active');
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            showSection('profile');
+        });
+    </script>
+</head>
+<body>
+    <h1>Aryan's Page</h1>
+    <ul>
+        <li><a href="#" onclick="showSection('profile')">My Profile</a></li>
+        <li><a href="#" onclick="showSection('hobbies')">My Hobbies</a></li>
+        <li><a href="#" onclick="showSection('family')">Family Background</a></li>
+    </ul>
+
+    <!-- Profile Section -->
+    <div id="profile" class="section">
+        <h2>My Profile</h2>
+        <img src="profile.png" alt="Profile Picture">
+        
+        <ul class="profile-details">
+            <li><strong>Name:</strong> Aryan Verma</li>
+            <li><strong>Date of Birth:</strong> 20/12/2004</li>
+            <li><strong>Course:</strong> B.Sc (Honours) Biochemistry</li>
+            <li><strong>VAC:</strong> Ecology and Literature</li>
+            <li><strong>SEC:</strong> Front End Web Design and Development</li>
+        </ul>
+    </div>
+
+    <!-- Hobbies Section -->
+    <div id="hobbies" class="section">
+        <h2>My Hobbies</h2>
+        <img src="singing.jpg" alt="Singing">
+        <img src="dance.jpg" alt="Dancing">
+        <img src="music.jpg" alt="Music">
+    </div>
+
+    <!-- Family Background Section -->
+    <div id="family" class="section">
+        <h2>Family Background</h2>
+        <img src="family_tree.jpg" alt="Family Tree">
+    </div>
+</body>
+</html>
